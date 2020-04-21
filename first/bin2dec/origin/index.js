@@ -1,9 +1,9 @@
 const getInput = document.getElementById('bnum');
 const setOutput=document.getElementsByTagName('output')[0];
+const getButton = document.getElementsByTagName('button')[0];
 
 // to save last input string
 let originstate='';
-//use es6
 
 function Bin2Dec(props){
     let sum=0;
@@ -41,4 +41,9 @@ getInput.oninput = ()=>{
     if (!getInput.value) {
         setOutput.value = '';
     }
+}
+
+getButton.click=(e)=>{
+    getInput.value='';
+    e.preventDefault();
 }

@@ -2,13 +2,32 @@ form {
     width: 450px;
     margin: 0;
     padding: 0;
-}
-input{
-    display: block;
+    position: fixed;
+    left: calc(50% - 225px);
+    top: 30%;
+    
 }
 fieldset{
 background-color: aqua;
+border: 2px solid #223344;
+border-radius: 4px;
 }
 legend{
     background-color: transparent;
+}
+div{
+    display: flex;
+    margin: 7px;
+    margin-bottom: 3px;
+}
+input,button{
+    display: block;
+}
+button{
+    margin-left: 130px;
+    border-radius: 2px;
+    border: 1px solid #000000;
+}
+legend{
+    font-weight: 600;
 }
