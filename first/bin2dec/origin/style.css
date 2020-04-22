@@ -8,7 +8,7 @@ form {
     
 }
 fieldset{
-background-color: aqua;
+background-image: repeating-linear-gradient(to right,#D7F112 ,#EFF843 66%,#E3F3A4 );
 border: 2px solid #223344;
 border-radius: 4px;
 }
@@ -27,7 +27,11 @@ button{
     margin-left: 130px;
     border-radius: 2px;
     border: 1px solid #000000;
+    font-weight: 600;
 }
 legend{
     font-weight: 600;
+}
+body{
+    background-image: repeating-linear-gradient(to right,#B3F9F3 ,#65D4DC 66%,#2798A9 );
 }
