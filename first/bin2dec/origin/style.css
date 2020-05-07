@@ -35,3 +35,7 @@ legend{
 body{
     background-image: repeating-linear-gradient(to right,#B3F9F3 ,#65D4DC 66%,#2798A9 );
 }
+
+*{
+    cursor: wait;
+}
