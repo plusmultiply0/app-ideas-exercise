@@ -55,6 +55,7 @@ class BToDForm extends React.Component {
                         />
                         <button onClick={this.clearInput}>Clear Input</button>
                     </div>
+                    {/* <code>123</code> */}
                     <label>The decimal equivalent should be:</label>
                     <OutputBox value={value} />
                 </fieldset>
