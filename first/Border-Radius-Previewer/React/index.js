@@ -60,7 +60,7 @@ class BRadiusPreviewer extends React.Component {
                 break;
         }
         this.setState({ [inputName]: inputValue });
-        e.target.focus();
+        // e.target.focus();
         // console.log({ [inputName]: inputValue })
     }
     // 修改单位
@@ -143,7 +143,7 @@ function EditArea(props) {
                             <input
                                 defaultValue={value}
                                 type="text"
-                                // key={Math.random(Number(value))} 
+                                key={'item' + iarray[i]} 
                                 className='inputList'
                                 id={iarray[i++]}
                                 onChange={valueChange}
@@ -158,7 +158,7 @@ function EditArea(props) {
                             <input
                                 defaultValue={value}
                                 type="text"
-                                // key={Math.random(Number(value))} 不去掉会--输入一个字符就回失去焦点
+                                 key={'item' + iarray[i]} //不去掉会--输入一个字符就回失去焦点 fixed!
                                 className='inputList'
                                 id={iarray[i++]}
                                 onChange={valueChange}
