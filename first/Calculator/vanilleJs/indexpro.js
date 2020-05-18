@@ -310,10 +310,15 @@ function operatEqual() {
     valueObject = calculatPostfix(tmp);
 
     // 操作结果大于8位数，显示ERR
-    if(valueObject.value.length>8){
+    if((valueObject.value.indexOf('.')===-1)&&valueObject.value.length>8){
         alert('The result of the operation more the largest number that can be displayed!');
         showCurrentInput('ERROR!');
         return;
+    }
+    // 小数点后保留3位
+    else if ((valueObject.value.indexOf('.') > -1) && valueObject.value.length > 8){
+        var tmp = valueObject.value.indexOf('.');
+        valueObject.value=valueObject.value.slice(0,tmp)+valueObject.value.slice(tmp,tmp+4);
     }
     // 更新显示
     showCurrentInput(valueObject);
