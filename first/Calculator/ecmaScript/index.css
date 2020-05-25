@@ -1,0 +1,91 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background: #58a;
+    background-image: repeating-linear-gradient(30deg, 
+              hsla(0,0%,100%,.1), hsla(0,0%,100%,.1) 15px,
+              transparent 0, transparent 30px);
+    height: 100vh;
+    position: relative;
+}
+
+
+.calculator{
+    background-color: hsla(150, 62%, 69%, 1);
+
+    width: 320px;
+    height: 300px;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    border: .3em solid hsla(0, 0%, 100%, 0.5);
+    background-clip: content-box;
+    border-radius: .3em;
+    /*
+    border-radius: .8em;
+    box-shadow: 0 0 0 .4em hsla(0, 0%, 100%, 0.5);
+    outline: .6em solid hsla(0, 0%, 100%, 0.5);
+    */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+/* first part */
+.outputArea{
+
+    background-color: cadetblue;
+    width: 90%;
+    height: 20%;
+    margin: 5px auto;
+
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+}
+
+.currentInput,.historyShow{
+    margin: 1%;
+    padding: 2px;
+}
+.historyShow{
+    /* background-color: coral; */
+    color: hsla(0, 51%, 90%, 0.5);
+}
+.currentInput{
+    /* background-color: cornsilk; */
+    color: hsla(0, 6%, 6%, 0.92);
+}
+
+
+/* second part */
+.operationArea{
+    display: grid;
+    grid-template-rows: repeat(5,1fr);
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 1%;
+
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+
+    background-color: hsla(150, 89%, 84%);
+    width: 90%;
+    height: 75%;
+
+}
+.operationArea div{
+    
+    /* height: 100%; */
+    
+    width: 90%;
+    padding: 9px 15px;
+    background-color: hsl(0, 40%, 62%);
+    color: hsl(0, 0%, 100%);
+}
