@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  width: 1080px;
+  height: 420px;
+  margin: 100px auto 0 auto;
+  box-shadow: 0 0 5px green;
+  overflow: hidden;
+}
+
+.wrap {
+  position: absolute;
+  /* 设置足够的宽度，让图片排成一行？ */
+
+  width: 9720px;
+  height: 420px;
+  z-index: 1;
+  /* 让前一张图隐藏---不能写这，不然获取元素的left值会为NaN*/
+  left: -1080px;
+}
+.container .wrap img {
+  /* 猜测float 让图片排成一行 */
+  float: left;
+  width: 1080px;
+  height: 420px;
+}
+
+/* 按钮整体样式 */
+.container .buttons {
+  position: absolute;
+  right: 360px;
+  bottom: 20px;
+
+  width: 240px;
+  height: 10px;
+  z-index: 2;
+}
+/* 按钮的样式 */
+.container .buttons span {
+  margin-left: 5px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: green;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
+/* 被选中的按钮样式 */
+.container .buttons span.on {
+  background-color: red;
+}
+
+/* 切换图片的箭头？ */
+.container .arrow {
+  position: absolute;
+  top: 40%;
+  color: white;
+  padding: 0px 14px;
+  border-radius: 50%;
+  font-size: 50px;
+  z-index: 2;
+  display: none;
+}
+.container .arrow_left {
+  left: 10px;
+}
+.container .arrow_right {
+  right: 10px;
+}
+.container:hover .arrow {
+  display: block;
+}
+.container .arrow:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
