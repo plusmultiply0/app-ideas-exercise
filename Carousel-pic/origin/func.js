@@ -42,7 +42,7 @@ let timer = null;
 function autoPlay() {
     timer = setInterval(function () {
         next_pic();
-    }, 1200);
+    }, 1500);
 }
 autoPlay();
 
