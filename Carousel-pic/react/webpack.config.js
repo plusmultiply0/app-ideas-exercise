@@ -25,7 +25,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: "[name].bundle.js",
-        // publicPath:'../'
+        // publicPath: '../assets/pics/'
     },
 
     module: {
@@ -34,7 +34,12 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     'style-loader',
-                    'css-loader',
+                    {
+                        loader: 'css-loader',
+                        options:{
+                            modules:true,
+                        },
+                    },
                 ],
             },
             {
@@ -43,10 +48,33 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env','@babel/preset-react']
+                        presets: ['@babel/preset-env', '@babel/preset-react']
                     }
                 }
-            }
+            },
+            // {
+            //     test: /\.(png|jpe?g|gif)$/i,
+            //     use:[
+            //         {
+            //             loader:'file-loader',
+            //         },
+            //     ],
+            //     // options:{
+            //     //     publicPath:'assets/pics/'
+            //     // }
+            // },
+            {
+                test: /\.(png|jpg|gif)$/i,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 81920,
+                            // outputPath: 'assets/pics/',
+                        },
+                    },
+                ],
+            },
         ],
     }
 }
