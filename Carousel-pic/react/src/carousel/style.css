@@ -15,7 +15,9 @@
 /* pics */
 .wrap{
     /* 图片排成一行 */
+    position: absolute;
     display: flex;
+    left: 0px;
 }
 
 /* button */
@@ -36,6 +38,7 @@
     background-color: blanchedalmond;
     margin-right: 5px;
 }
+
 
 /* acrrow */
 .arrow{
