@@ -18,7 +18,9 @@ class Casousel extends Component {
         this.changePic=this.changePic.bind(this);
     }
 
-    nextPic() {
+    nextPic(e) {
+        // 阻止默认行为
+        e&&e.preventDefault();
         this.move(true);
         let index = this.state.index + 1
         if (index > document.querySelector('.wrap').children.length - 1)
@@ -27,8 +29,10 @@ class Casousel extends Component {
         // 原先是根据state里index值，更新数据
         // 直接传参数更新如何？切换图片的同时，圆点颜色会立即更新√
         this.showDot(index);
+
     }
-    prePic() {
+    prePic(e) {
+        e&&e.preventDefault();
         this.move(false)
         let index = this.state.index - 1
         if (index < 0)
@@ -122,7 +126,7 @@ class Casousel extends Component {
                 {/* 此处添加left,不会显示到style里？ */}
                 <div className={`${styles.wrap} wrap`} 
                     
-                style={{ left: '0px;', color: 'blue' }}>
+                style={{ left: '0px', color: 'blue' }}>
                     {
                         pics.map((item, index) => <img src={item} alt="" key={`pic of ` + index}></img>)
                     }
@@ -135,10 +139,10 @@ class Casousel extends Component {
                         ></span>)
                     }
                 </div>
-                <a href={`javascript:;`} className={`${styles.arrow} ${styles.arrowLeft} arrowLeft`}
+                <a href={``} className={`${styles.arrow} ${styles.arrowLeft} arrowLeft`}
                     onClick={this.prePic}
                 >&lt;</a>
-                <a href={`javascript:;`} className={`${styles.arrow} ${styles.arrowRight} arrowRight`}
+                <a href={``} className={`${styles.arrow} ${styles.arrowRight} arrowRight`}
                     onClick={this.nextPic}
                 >&gt;</a>
             </div>
