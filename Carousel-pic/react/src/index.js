@@ -23,5 +23,3 @@ ReactDom.render(
     <App/>,
     document.querySelector('body')
 );
-
-// document.body.appendChild(<App/>);
