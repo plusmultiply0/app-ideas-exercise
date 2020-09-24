@@ -39,7 +39,6 @@
     margin-right: 5px;
 }
 
-
 /* acrrow */
 .arrow{
     /* position: absolute; */
@@ -61,9 +60,7 @@
 }
 .arrowLeft{
     left:5%;
-
 }
 .arrowRight{
     right: 5%;
-    
 }
