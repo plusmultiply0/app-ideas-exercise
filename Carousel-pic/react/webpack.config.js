@@ -25,7 +25,6 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: "[name].bundle.js",
-        // publicPath: '../assets/pics/'
     },
 
     module: {
@@ -38,7 +37,6 @@ module.exports = {
                         loader: 'css-loader',
                         options:{
                             modules:true,
-                            // localIdentName: '[local]',
                         },
                     },
                 ],
@@ -53,17 +51,6 @@ module.exports = {
                     }
                 }
             },
-            // {
-            //     test: /\.(png|jpe?g|gif)$/i,
-            //     use:[
-            //         {
-            //             loader:'file-loader',
-            //         },
-            //     ],
-            //     // options:{
-            //     //     publicPath:'assets/pics/'
-            //     // }
-            // },
             {
                 test: /\.(png|jpg|gif)$/i,
                 use: [
@@ -71,7 +58,6 @@ module.exports = {
                         loader: 'url-loader',
                         options: {
                             limit: 81920,
-                            // outputPath: 'assets/pics/',
                         },
                     },
                 ],

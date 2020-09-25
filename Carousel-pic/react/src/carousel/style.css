@@ -22,12 +22,8 @@
 
 /* button */
 .allButton{
-    /* width: 10%; */
-    /* height: 10%; */
-    /* border-radius: 50%; */
     bottom: 10px;
     right: 45%;
-    /* width: 50px; */
     position: absolute;
 }
 .button{
@@ -41,7 +37,6 @@
 
 /* acrrow */
 .arrow{
-    /* position: absolute; */
     text-decoration: none;
     color:white;
     font-size: 40px;
