@@ -52,12 +52,12 @@ module.exports = {
                 }
             },
             {
-                test: /\.(png|jpg|gif)$/i,
+                test: /\.(png|jpg|gif)$/,
                 use: [
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: 81920,
+                            limit: 819200,
                         },
                     },
                 ],

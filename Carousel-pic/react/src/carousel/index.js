@@ -16,11 +16,13 @@ class Casousel extends Component {
         this.clearAuto = this.clearAuto.bind(this);
         this.showDot=this.showDot.bind(this);
         this.changePic=this.changePic.bind(this);
+        // 
+        this.debounce = this.debounce.bind(this);
     }
 
     nextPic(e) {
         // 阻止默认行为
-        e&&e.preventDefault();
+        // e&&e.preventDefault();
         this.move(true);
         let index = this.state.index + 1
         if (index > document.querySelector('.wrap').children.length - 1)
@@ -29,8 +31,8 @@ class Casousel extends Component {
         // 原先是根据state里index值，更新数据
         // 直接传参数更新如何？切换图片的同时，圆点颜色会立即更新√
         this.showDot(index);
-
     }
+
     prePic(e) {
         e&&e.preventDefault();
         this.move(false)
@@ -106,6 +108,15 @@ class Casousel extends Component {
         this.setState({index:q})
     }
     
+    // 防抖函数
+    debounce(func,delay){
+        let timer;
+        return function(...args){
+            clearTimeout(timer);
+            timer=setTimeout(()=>func(args),delay);
+        }
+    }
+    
     componentDidMount() {
         const getWrap = document.querySelector('.wrap')
         // 预先设置 left 值，便于后续移动图片
@@ -142,8 +153,8 @@ class Casousel extends Component {
                 <a href={``} className={`${styles.arrow} ${styles.arrowLeft} arrowLeft`}
                     onClick={this.prePic}
                 >&lt;</a>
-                <a href={``} className={`${styles.arrow} ${styles.arrowRight} arrowRight`}
-                    onClick={this.nextPic}
+                <a href={`javascript:;`} className={`${styles.arrow} ${styles.arrowRight} arrowRight`}
+                    onClick={this.debounce(this.nextPic,1000)}
                 >&gt;</a>
             </div>
         );
