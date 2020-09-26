@@ -1,13 +1,17 @@
 import React from 'react'
-import styles from './style.css'
+import Siderbar from '../sidebar';
+import "./style.css";
 
 function Drawer(props) {
-    const { children, sidebar } = props;
+
+    const { children ,isOpen,close} = props;
     return (
-        <div>
-            <div>{children}</div>
-            <div>{sidebar}</div>
-            <div />
+        <div className={`drawer ${ isOpen? 'drawOpen' : ''}`}>
+            <div className={`drawerContent`}>{children}</div>
+            <div className={`drawerSidebar`}>
+                <Siderbar close={close}/>
+            </div>
+            <div className={'drawerOverlay'} onClick={close} />
         </div>
     )
 }

@@ -18,7 +18,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            title: 'Carousel',
+            title: 'Drawer',
         }),
     ],
 
@@ -33,12 +33,7 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options:{
-                            modules:true,
-                        },
-                    },
+                    'css-loader',
                 ],
             },
             {
@@ -50,17 +45,6 @@ module.exports = {
                         presets: ['@babel/preset-env', '@babel/preset-react']
                     }
                 }
-            },
-            {
-                test: /\.(png|jpg|gif)$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 819200,
-                        },
-                    },
-                ],
             },
         ],
     }

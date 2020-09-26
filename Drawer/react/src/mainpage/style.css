@@ -1,0 +1,23 @@
+.main{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: large;
+}
+
+.head{
+    background-color: red;
+}
+
+.body{
+    background-color: royalblue;
+}
+
+.bottom{
+    background-color: green;
+}
+
+.head,.body,.bottom{
+    height: 30%;
+    width: 100%;
+}

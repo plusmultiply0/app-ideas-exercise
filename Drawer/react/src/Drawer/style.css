@@ -1,0 +1,46 @@
+.drawer {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.drawerContent {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: sandybrown;
+  z-index: 1;
+}
+
+.drawerSidebar {
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  z-index: 3;
+  background-color: hotpink;
+  transform: translate3d(-100%, 0, 0);
+  transition: all .3s ease-out;
+}
+
+.drawerOverlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  transition: all .3s ease-in-out;
+  display: none;
+}
+
+/* 打开侧边栏后 */
+.drawOpen .drawerSidebar {
+  transform: translate3d(0, 0, 0);
+}
+
+.drawOpen .drawerOverlay {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.3);
+}
