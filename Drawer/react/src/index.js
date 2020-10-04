@@ -1,35 +1,16 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import ReactDom from 'react-dom'
 
 import Drawer from './Drawer'
 import Main from './mainpage'
 
-class App extends Component {
-
-    constructor(props){
-        super(props);
-        this.state={
-            isOpen:false,
-        }
-        this.closeBar = this.closeBar.bind(this);
-        this.openBar = this.openBar.bind(this);
-    }
-
-    closeBar() {
-        this.setState({ isOpen: false })
-    }
-
-    openBar() {
-        this.setState({ isOpen: true })
-    }
-
-    render() {
-        return (
-            <Drawer open={this.openBar} close={this.closeBar} isOpen={this.state.isOpen}>
-                <Main open={this.openBar}/>
-            </Drawer>
-        )
-    }
+const App = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    return (
+        <Drawer setOpen={setIsOpen} isOpen={isOpen}>
+            <Main setOpen={setIsOpen} />
+        </Drawer>
+    )
 }
 
 ReactDom.render(

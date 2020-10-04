@@ -2,10 +2,10 @@ import React from 'react'
 import "./style.css";
 
 const Siderbar = (props) => {
-    const { close} = props;
+    const { setOpen} = props;
     return (
         <div className={'siderbar'}>
-            <div className={'body'} onClick={close}>close</div>
+            <div className={'body'} onClick={() => setOpen(false)}>close</div>
         </div>
     )
 }

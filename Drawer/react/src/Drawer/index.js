@@ -4,14 +4,14 @@ import "./style.css";
 
 function Drawer(props) {
 
-    const { children ,isOpen,close} = props;
+    const { children, isOpen, setOpen } = props;
     return (
-        <div className={`drawer ${ isOpen? 'drawOpen' : ''}`}>
+        <div className={`drawer ${isOpen ? 'drawOpen' : ''}`}>
             <div className={`drawerContent`}>{children}</div>
             <div className={`drawerSidebar`}>
-                <Siderbar close={close}/>
+                <Siderbar setOpen={setOpen} />
             </div>
-            <div className={'drawerOverlay'} onClick={close} />
+            <div className={'drawerOverlay'} onClick={() => setOpen(false)} />
         </div>
     )
 }
