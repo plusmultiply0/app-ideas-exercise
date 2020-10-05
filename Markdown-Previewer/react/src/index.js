@@ -1,11 +1,14 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 
-import MdPreviewer from './components'
+import Container from './components'
 
-const App = () => <></>;
+const App = () =>
+    <>
+        <Container/>
+    </>
 
 ReactDom.render(
     <App />,
-    document.querySelector('root')
+    document.querySelector('body')
 )

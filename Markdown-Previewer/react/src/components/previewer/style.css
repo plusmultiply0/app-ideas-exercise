@@ -1,0 +1,23 @@
+#preview,#editor{
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+    margin: 0 auto;
+}
+
+#editor{
+    display: block;
+    width: 60%;
+    height: 150px;
+    border: 1px solid #000000;
+    background-color: azure;
+}
+
+#preview{
+    display: block;
+    width: 80%;
+    height: 150px;
+    border: 1px solid #000000;
+    background-color: beige;
+}
