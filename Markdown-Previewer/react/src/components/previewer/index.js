@@ -1,5 +1,6 @@
 import marked from 'marked'
 import React from 'react'
+
 import './style.css'
 
 const Editor = (props) => {
@@ -8,6 +9,7 @@ const Editor = (props) => {
         <div>
             {/* <label htmlFor={'editor'}>123</label> */}
             <textarea id={'editor'} onChange={(e)=>setState(e.target.value)} value={state}/>
+            {console.log(state)}
         </div>
     )
 }

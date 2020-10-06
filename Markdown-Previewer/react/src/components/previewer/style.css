@@ -4,6 +4,14 @@
     left: 50%;
     transform: translate(-50%,-50%); */
     margin: 0 auto;
+    overflow: auto;
+    /* list-style-position: outside; */
+}
+li{
+    margin-left: 20px;
+}
+ul{
+    margin: 5px 0;
 }
 
 #editor{
